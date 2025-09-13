@@ -39,6 +39,7 @@ TigoTap:
 # Usually Barcodes are only between exchanged on Topology Changes. Under normal circumstances this only happends in the late evening or morning hours.
 sensor:
   - platform: TigoTap
+    id: A01_Vin
     name: A01_Vin
     tap-ID: TigoCCA
     type: Vin
@@ -95,4 +96,4 @@ sensor:
     unit_of_measurement: W
     accuracy_decimals: 3
     lambda: |-
-      return id(A01_Vout).state * id(A01_Iin).state;
+      return id(A01_Vin).state * id(A01_Iin).state;
